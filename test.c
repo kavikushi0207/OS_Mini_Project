@@ -22,7 +22,17 @@ struct Student {
 
 int main()
 {
-
+    printf("index: ");
+    scanf("%s",index);
+    printf("marks of assignment 1: ");
+    scanf("%d",&as1);
+    printf("marks of assignment 2: ");
+    scanf("%d",&as2);
+    printf("marks of project: ");
+    scanf("%d",&prj);
+    printf("marks of final exam: ");
+    scanf("%d",&fin);
+    
     FILE* of;
 
     of = fopen("test.txt", "w");
