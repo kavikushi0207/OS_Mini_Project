@@ -15,6 +15,7 @@ float assgnmt01_marks; //15%
 float assgnmt02_marks; //15%
 float project_marks; //20%
 float finalExam_marks; //50%
+float all_marks;
 }student_marks;
 
 student_marks markList[listSize];
@@ -50,7 +51,8 @@ int regNumberGen(int lower, int upper){
 }
 
 student_marks randomStudent(){
-    int num = regNumberGen(1000,2000);
+    int num = regNumberGen(3200,3500);
+    //float sum = 0;
     char snum[100];
     sprintf(snum, "EG/2018/%d", num);
     student_marks tempStudent;
@@ -59,14 +61,17 @@ student_marks randomStudent(){
     tempStudent.assgnmt02_marks = numGenarator(0,15);
     tempStudent.project_marks = numGenarator(0,20);
     tempStudent.finalExam_marks = numGenarator(0,50);
+    tempStudent.all_marks = tempStudent.assgnmt01_marks + tempStudent.assgnmt02_marks + tempStudent.project_marks + tempStudent.finalExam_marks;
     return tempStudent;
 }
 
 student_marks* studentList(){
+    printf("No. \tRegister No.   as1    as2    project  fExam  all \n");
+    printf("--------------------------------------------------------------------\n");
     for(int i = 0; i<listSize; i++){
         student_marks student = randomStudent();
         markList[i] = student;
-        printf("%d\t%s\t%.2f\t%.2f\t%.2f\t%.2f\n",i+1,student.student_index,student.assgnmt01_marks,student.assgnmt02_marks,student.project_marks,student.finalExam_marks);
+        printf("%d\t%s\t%.2f\t%.2f\t%.2f\t%.2f\t%.2f\n",i+1,student.student_index,student.assgnmt01_marks,student.assgnmt02_marks,student.project_marks,student.finalExam_marks,student.all_marks);
     }
     return markList;
 }
