@@ -220,7 +220,7 @@ void main(){
            perror ("msgsnd error");
             printf("Error No: %d\n",errno);
            exit(0); 
-        }///IPC_RMID - FLAG FOR DELETE MSG
+        }//IPC_RMID - FLAG FOR DELETE MSG
     }
 }
 struct msg create_msg(long msgType, char* msgBody){
